@@ -99,27 +99,6 @@ describe("recognizeStatements()", () => {
     cells.should.be.deep.equal(expectedCells);
   });
 
-  it("should correctly assign entry point", () => {
-    const cells = [
-      {
-        statements: [
-          {
-            formated: ">",
-            exact: [">"]
-          },
-          {
-            formated: "@",
-            exact: ["@"]
-          }
-        ]
-      }
-    ];
-
-    const entry = {};
-    recognizeStatements(cells, entry);
-    entry.should.deep.equal({ cellIndex: 0, statementIndex: 1 });
-  });
-
   describe("throws", () => {
     it("should throw on unrecognized statement", () => {
       const cells = [

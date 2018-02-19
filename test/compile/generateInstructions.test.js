@@ -12,13 +12,6 @@ const {
 const types = require("../../src/compile/types");
 
 describe("generateInstructions()", () => {
-  it("should correctly set entry point to the first line", () => {
-    const mockCells = [];
-    const mockEntry = { cellIndex: 1, statementIndex: 5 };
-    const result = generateInstructions(mockCells, mockEntry);
-    const expected = `1 5`;
-    result.should.be.equal(expected);
-  });
 
   it("should correctly generate instructions from cells", () => {
     const mockCells = [
@@ -57,7 +50,7 @@ describe("generateInstructions()", () => {
 
     const mockEntry = { cellIndex: 2, statementIndex: 5 };
     const result = generateInstructions(mockCells, mockEntry);
-    const expected = `2 5\n0 0 e\n0 1 c a b 5 1\n1 0 a a a+1\n1 1 c b a 5 0`;
+    const expected = `0 0 e\n0 1 c a b 5 1\n1 0 a a a+1\n1 1 c b a 5 0`;
     result.should.be.equal(expected);
   });
 

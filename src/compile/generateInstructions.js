@@ -41,8 +41,8 @@ const stringifyInstructions = instructions => {
   return instructions.map(instruction => instruction.join(" ")).join("\n");
 };
 
-const generateInstructions = (cells, entry) => {
-  const instructions = [[entry.cellIndex, entry.statementIndex]];
+const generateInstructions = cells => {
+  const instructions = [];
 
   cells.forEach((cell, cellIndex) => {
     cell.statements.forEach((statement, statementIndex) => {

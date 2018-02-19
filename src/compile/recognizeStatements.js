@@ -5,7 +5,7 @@ const {
 } = require("../errors/recognitionErrors");
 const { ENTRY_TYPE, UNRECOGNIZED_TYPE } = require("./types");
 
-const recognizeStatements = (cells, entry) => {
+const recognizeStatements = cells => {
   const recognizers = createRecognizers();
   let entryPointsCount = 0;
 
@@ -29,8 +29,6 @@ const recognizeStatements = (cells, entry) => {
 
             if (type === ENTRY_TYPE) {
               entryPointsCount++;
-              entry.cellIndex = cellIndex;
-              entry.statementIndex = statementIndex;
             }
 
             return { type, formated, meta, exact };

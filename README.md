@@ -16,7 +16,6 @@ _Just to breifly clarify what it does at runtime. It starts at "@". Prompts inpu
 I'm sure that wasn't a clarification at all, but it gets worse in `examples/counter.ins.ore`
 
 ```
-0 0
 0 0 e
 0 1 i a
 0 2 i n

@@ -12,15 +12,14 @@ const defaultConfig = {
 
 const compile = (script, additionalConfig = {}) => {
   const cells = [];
-  const entry = { cellIndex: 0, statementIndex: 0 };
   const bounds = { charIndex: 0, lineIndex: 0 };
   const config = { ...defaultConfig, ...additionalConfig };
 
   parseCells(cells, bounds, script, config);
   parseStatements(cells, config);
-  recognizeStatements(cells, entry);
+  recognizeStatements(cells);
   determineTargets(cells, bounds);
-  const instructions = generateInstructions(cells, entry);
+  const instructions = generateInstructions(cells);
 
   return instructions;
 };
